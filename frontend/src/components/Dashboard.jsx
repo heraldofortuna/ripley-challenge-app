@@ -1,6 +1,6 @@
 import React from "react";
 
-const Dashboard = () => {
+const Dashboard = ({ data }) => {
   return (
     <table>
       <thead>
@@ -11,11 +11,13 @@ const Dashboard = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Nombre 1</td>
-          <td>Apellido 1</td>
-          <td>Fecha de nacimiento 1</td>
-        </tr>
+        {data.map(client => (
+          <tr key={client.id}>
+            <td>{client.name}</td>
+            <td>{client.lastname}</td>
+            <td>{client.birthday}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   )
