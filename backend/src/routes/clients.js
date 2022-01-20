@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const cors = require("cors");
+router.use(cors());
 
 const mysqlConnection = require("../database");
 
 // API #3: List of clients
-router.get("/", (req, res) => {
+router.get("/clients/", (req, res) => {
   mysqlConnection.query("SELECT * FROM clients", (err, rows, fields) => {
     if (!err) {
       res.json(rows);
@@ -15,7 +17,7 @@ router.get("/", (req, res) => {
 });
 
 // API #1: Add a new client
-router.post("/", (req, res) => {
+router.post("/clients/", (req, res) => {
   const { id, name, lastname, birthday } = req.body;
   const query = `
     CALL clientAddOrEdit(?, ?, ?, ?);
@@ -34,7 +36,7 @@ router.post("/", (req, res) => {
 });
 
 // EXTRA API: Get a specific client
-router.get("/:id", (req, res) => {
+router.get("/clients/:id", (req, res) => {
   const { id } = req.params;
   mysqlConnection.query(
     "SELECT * FROM clients WHERE id = ?",
