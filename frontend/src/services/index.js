@@ -5,7 +5,7 @@ const baseUrl = "http://localhost:3001";
 export const getClients = async () => {
   try {
     const response = await axios({
-      url: `${baseUrl}/clients`,
+      url: `${baseUrl}/clients/`,
       method: "GET",
     });
 
@@ -15,12 +15,12 @@ export const getClients = async () => {
   }
 };
 
-export const addClient = async (clientData) => {
+export const addClient = async (newClient) => {
   try {
     const response = await axios({
-      url: `${baseUrl}/clients`,
+      url: `${baseUrl}/clients/create/`,
       method: "POST",
-      data: clientData,
+      data: newClient,
     });
 
     return response;

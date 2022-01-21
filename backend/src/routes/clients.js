@@ -17,7 +17,7 @@ router.get("/clients/", (req, res) => {
 });
 
 // API #1: Add a new client
-router.post("/clients/", (req, res) => {
+router.post("/clients/create/", (req, res) => {
   const { id, name, lastname, birthday } = req.body;
   const query = `
     CALL clientAddOrEdit(?, ?, ?, ?);
