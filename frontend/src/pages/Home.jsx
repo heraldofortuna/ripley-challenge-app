@@ -32,7 +32,7 @@ const Home = () => {
       <Header />
       <main>
         <div className="wrapper">
-          <h2>Lista de clientes</h2>
+          <h2 className="subtitle" >Lista de clientes</h2>
           <Dashboard data={clients} />
           <Average data={clients} />
         </div>

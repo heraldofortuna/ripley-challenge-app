@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   :root {
     --font-primary: "Roboto", sans-serif;
-
     --color-dark: #4d4c4c;
     --color-purple: #4d1a88;
     --color-white: #eeeeee;
@@ -23,6 +22,18 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .subtitle {
+    width: fit-content;
+    ::after {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 50%;
+      background-color: var(--color-purple);
+      border-radius: 4px;
+    }
   }
 `;
 
