@@ -6,8 +6,8 @@ router.use(cors());
 const mysqlConnection = require("../database");
 
 // API #3: List of clients
-router.get("/clients/", (res) => {
-  mysqlConnection.query("SELECT * FROM clients", (err, rows) => {
+router.get("/clients/", (req, res) => {
+  mysqlConnection.query("SELECT * FROM clients", (err, rows, fields) => {
     if (!err) {
       res.json(rows);
     } else {
@@ -36,8 +36,8 @@ router.post("/clients/create/", (req, res) => {
 });
 
 // API #2: Average age of clients
-router.use("/clients/average/", (res) => {
-  mysqlConnection.query("SELECT * FROM clients", (err, rows) => {
+router.use("/clients/average/", (req, res, next) => {
+  mysqlConnection.query("SELECT * FROM clients", (err, rows, fields) => {
     const getAge = (time) => {
       const dateArray = time.split("-");
       const yearsElapsed = Math.trunc(
@@ -66,7 +66,7 @@ router.get("/clients/:id", (req, res) => {
   mysqlConnection.query(
     "SELECT * FROM clients WHERE id = ?",
     [id],
-    (err, rows) => {
+    (err, rows, fields) => {
       if (!err) {
         res.json(rows[0]);
       } else {
@@ -82,7 +82,7 @@ router.delete("/clients/:id", (req, res) => {
   mysqlConnection.query(
     "DELETE FROM clients WHERE id = ?",
     [id],
-    (err, rows) => {
+    (err, rows, fields) => {
       if (!err) {
         res.json(rows[0]);
       } else {

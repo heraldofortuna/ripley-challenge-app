@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getClients } from "../services/index";
+import { getClients, averageClients } from "../services/index";
 import Header from "../components/Header";
 import Dashboard from "../components/Dashboard";
 import Average from "../components/Average";
@@ -7,13 +7,15 @@ import Average from "../components/Average";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [clients, setClients] = useState([]);
+  const [average, setAverage] = useState("");
 
   useEffect(() => {
     const loadClients = async () => {
       const response = await getClients();
-      console.log(response);
+      const averageOfClients = await averageClients();
       if (response.status === 200) {
         setClients(response.data);
+        setAverage(averageOfClients.data);
       }
       setIsLoading(false);
     }
@@ -35,7 +37,7 @@ const Home = () => {
         <div className="wrapper">
           <h2 className="subtitle" >Lista de clientes</h2>
           <Dashboard data={clients} />
-          <Average />
+          <Average average={average} />
         </div>
       </main>
     </>

@@ -1,31 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { averageClients } from "../services/index";
+import React from "react";
+import styled from "styled-components";
 
-const Average = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [average, setAverage] = useState([]);
+const StyledAverage = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
 
-  useEffect(() => {
-    const loadAverage = async () => {
-      const response = await averageClients();
-      console.log(response);
-      if (response.status === 200) {
-        setAverage(response.data);
-      }
-      setIsLoading(false);
-    }
-    loadAverage();
-  }, []);
+const StyledContent = styled.p`
+  color: var(--color-purple);
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+`;
 
+const Average = ({ average }) => {
   return (
-    <div>
+    <StyledAverage>
       <h2 className="subtitle" >Edad promedio de los clientes</h2>
-      {isLoading ? (
-        <p>Is Loading</p>
-      ) : (
-        <p>{average}</p>
-      )}
-    </div>
+      <StyledContent>{average} años</StyledContent>
+    </StyledAverage>
   )
 }
 
