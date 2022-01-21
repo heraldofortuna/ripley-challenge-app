@@ -28,3 +28,16 @@ export const addClient = async (newClient) => {
     console.log(err);
   }
 };
+
+export const averageClients = async () => {
+  try {
+    const response = await axios({
+      url: `${baseUrl}/clients/average/`,
+      method: "GET",
+    });
+
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+};

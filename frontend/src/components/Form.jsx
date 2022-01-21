@@ -25,6 +25,7 @@ const StyledInput = styled.div`
 const StyledButtons = styled.div`
   display: flex;
   align-items: center;
+  gap: 10px;
 `;
 
 const Form = () => {

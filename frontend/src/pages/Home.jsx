@@ -11,6 +11,7 @@ const Home = () => {
   useEffect(() => {
     const loadClients = async () => {
       const response = await getClients();
+      console.log(response);
       if (response.status === 200) {
         setClients(response.data);
       }
@@ -34,7 +35,7 @@ const Home = () => {
         <div className="wrapper">
           <h2 className="subtitle" >Lista de clientes</h2>
           <Dashboard data={clients} />
-          <Average data={clients} />
+          <Average />
         </div>
       </main>
     </>
