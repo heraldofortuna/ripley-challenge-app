@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { addClient } from "../services/index";
+import Button from "./Button";
 
 const Form = () => {
   const [formValues, setFormValues] = useState({
@@ -38,8 +39,8 @@ const Form = () => {
         <input type="date" name="birthday" onChange={handleChange} />
       </div>
       <div>
-        <button type="submit">Crear</button>
-        <Link to="/">Cancelar</Link>
+        <Button text="Crear" type="submit" />
+        <Link to="/"><Button text="Cancelar" /></Link>
       </div>
     </form>
   )

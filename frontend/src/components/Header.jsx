@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Button from "./Button";
 
 const StyledHeader = styled.header`
   height: 100px;
@@ -15,15 +16,20 @@ const StyledContainer = styled.div`
   gap: 10px;
 `;
 
+const StyledNavigator = styled.nav`
+  display: flex;
+  gap: 20px;
+`;
+
 const Header = () => {
   return (
     <StyledHeader>
       <StyledContainer>
         <h1>Reto Fullstack Ripley</h1>
-        <nav>
-          <Link to="/create">Añadir un cliente</Link>
-          <Link to="/">Lista de clientes</Link>
-        </nav>
+        <StyledNavigator>
+          <Link to="/create"><Button text="Añadir a un cliente" /></Link>
+          <Link to="/"><Button text="Lista de clientes" /></Link>
+        </StyledNavigator>
       </StyledContainer>
     </StyledHeader>
   )

@@ -8,7 +8,7 @@ const CreateClient = () => {
       <Header />
       <main>
         <div className="wrapper">
-          <h2>Añadir un cliente nuevo</h2>
+          <h2 className="subtitle" >Añadir un cliente nuevo</h2>
           <Form />
         </div>
       </main>
