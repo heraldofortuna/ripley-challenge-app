@@ -3,6 +3,7 @@ import { getClients, averageClients } from "../services/index";
 import Header from "../components/Header";
 import Dashboard from "../components/Dashboard";
 import Average from "../components/Average";
+import Loading from "../components/Loading";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,22 +23,22 @@ const Home = () => {
     loadClients();
   }, []);
 
-  if (isLoading) {
-    return <p>Is Loading</p>
-  }
-
-  if (!clients.length) {
-    return <p>You don't have clients</p>
-  }
-
   return (
     <>
       <Header />
       <main>
         <div className="wrapper">
-          <h2 className="subtitle" >Lista de clientes</h2>
-          <Dashboard data={clients} />
-          <Average average={average} />
+          { isLoading ? (
+            <Loading />
+          ) : !clients.length ? (
+            <h2 className="subtitle">You don't have clients</h2>
+          ) : (
+            <>
+              <h2 className="subtitle" >Lista de clientes</h2>
+              <Dashboard data={clients} />
+              <Average average={average} />
+            </>
+          )}
         </div>
       </main>
     </>
