@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Dashboard = ({ data }) => {
-  const StyledTable = styled.table`
+const StyledTable = styled.table`
     & th {
       padding: 10px 0 20px 0;
       border-bottom: 1px solid var(--color-dark);
@@ -11,8 +10,9 @@ const Dashboard = ({ data }) => {
       text-align: center;
       padding: 10px 0;
     }
-  `;
+`;
 
+const Dashboard = ({ data }) => {
   return (
     <StyledTable>
       <thead>
