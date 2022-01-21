@@ -4,7 +4,7 @@ const Average = ({ data }) => {
   console.log(data);
   return (
     <div>
-      <h3>Promedio edad entre todos los clientes</h3>
+      <h2>Promedio edad entre todos los clientes:</h2>
       <p></p>
     </div>
   )

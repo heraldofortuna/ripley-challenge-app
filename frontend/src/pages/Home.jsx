@@ -31,9 +31,11 @@ const Home = () => {
     <>
       <Header />
       <main>
-        <h2>Lista de clientes</h2>
-        <Dashboard data={clients} />
-        <Average data={clients} />
+        <div className="wrapper">
+          <h2>Lista de clientes</h2>
+          <Dashboard data={clients} />
+          <Average data={clients} />
+        </div>
       </main>
     </>
   )
