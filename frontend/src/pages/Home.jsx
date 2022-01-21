@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getClients } from "../services/index";
 import Header from "../components/Header";
 import Dashboard from "../components/Dashboard";
+import Average from "../components/Average";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,8 +30,11 @@ const Home = () => {
   return (
     <>
       <Header />
-      <h2>Lista de clientes</h2>
-      <Dashboard data={clients} />
+      <main>
+        <h2>Lista de clientes</h2>
+        <Dashboard data={clients} />
+        <Average data={clients} />
+      </main>
     </>
   )
 }

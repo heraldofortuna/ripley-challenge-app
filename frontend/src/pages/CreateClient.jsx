@@ -6,8 +6,10 @@ const CreateClient = () => {
   return (
     <>
       <Header />
-      <h2>Añadir un cliente nuevo</h2>
-      <Form />
+      <main>
+        <h2>Añadir un cliente nuevo</h2>
+        <Form />
+      </main>
     </>
   )
 }
