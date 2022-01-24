@@ -19,7 +19,7 @@ app.use(express.json());
 const whitelist = [
   "http://localhost:3001",
   "http://localhost:3000",
-  "https://shrouded-journey-38552.herokuapp.com",
+  "https://ripley-challenge-app.herokuapp.com/",
 ];
 const corsOptions = {
   origin: function (origin, callback) {

@@ -95,6 +95,12 @@ ReactJS official documentation:
 https://reactjs.org/docs/getting-started.html
 ```
 
+¿How to deploy a React Express + NodeJS app in Heroku?
+
+```html
+https://www.youtube.com/watch?v=xgvLP3f2Y7k
+```
+
 Loader component:
 
 ```html
