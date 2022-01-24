@@ -46,17 +46,13 @@ Responsive web application developed with ReactJS + NodeJS + ExpressJS, which sh
 First, after cloning the project locally, install the dependencies to the local in /backend directory. (Note: I use 16.13.1 version in this project.)
 
 ```html
-$ cd backend
-```
-
-```html
 $ npm install
 ```
 
 And start up the server:
 
 ```html
-$ npm src/index.js
+$ node src/index.js
 ```
 
 Finally, navigate to http://localhost:3001 in your web browser.

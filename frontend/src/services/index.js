@@ -1,12 +1,12 @@
 import axios from "axios";
 
-// const baseUrl = "http://localhost:3001";
+const baseUrl = "http://localhost:3001";
 
 export const getClients = async () => {
   try {
     const response = await axios({
-      // url: `${baseUrl}/clients/`,
-      url: "/clients/",
+      url: `${baseUrl}/clients/`,
+      // url: "/clients/",
       method: "GET",
     });
 
@@ -19,8 +19,8 @@ export const getClients = async () => {
 export const addClient = async (newClient) => {
   try {
     const response = await axios({
-      // url: `${baseUrl}/clients/create/`,
-      url: "/clients/create/",
+      url: `${baseUrl}/clients/create/`,
+      // url: "/clients/create/",
       method: "POST",
       data: newClient,
     });
@@ -34,8 +34,8 @@ export const addClient = async (newClient) => {
 export const averageClients = async () => {
   try {
     const response = await axios({
-      // url: `${baseUrl}/clients/average/`,
-      url: "/clients/average/",
+      url: `${baseUrl}/clients/average/`,
+      // url: "/clients/average/",
       method: "GET",
     });
 
