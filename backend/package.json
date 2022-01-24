@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "heroku-postbuild": "cd frontend && yarn install --only=dev --no-shrinkwrap && yarn build",
-    "start": "node src/index.js"
+    "build": "webpack --mode production",
+    "heroku-postbuild": "cd frontend && yarn install && yarn build"
   },
   "keywords": [],
   "author": "",
