@@ -22,7 +22,7 @@
 
 ## Description
 
-You must implement a web application that allows keep track of different places to eat. The application is quite simple: so you only need to display a table that shows the information from the database. It is not registration or login is required.
+Responsive web application developed with ReactJS + NodeJS + ExpressJS, which shows a list of clients in addition to being able to create new ones.
 
 ### Technologies
 
@@ -43,43 +43,23 @@ You must implement a web application that allows keep track of different places 
 
 ### Prepare and run the backend:
 
-First, after cloning the project locally, install Pipenv using pip: (Note: Depending on your installation, you may need to use pip3 instead of pip.)
-
-```html
-$ pip install pipenv
-```
-
-And activate a new virtual environment:
-
-```html
-$ pipenv shell
-```
-
-Install Django using Pipenv:
-
-```html
-$ pipenv install django
-```
-
-Now, navigate into the directory:
+First, after cloning the project locally, install the dependencies to the local in /backend directory. (Note: I use 16.13.1 version in this project.)
 
 ```html
 $ cd backend
 ```
 
-Run migrations:
-
 ```html
-$ python3 manage.py migrate
+$ npm install
 ```
 
 And start up the server:
 
 ```html
-$ python3 manage.py runserver
+$ npm src/index.js
 ```
 
-Finally, navigate to http://localhost:8000 in your web browser.
+Finally, navigate to http://localhost:3001 in your web browser.
 
 ### Prepare and run the frontend:
 
@@ -109,18 +89,6 @@ Finally, open [http://localhost:3000](http://localhost:3000) to see it in your d
 
 ## References
 
-Tutorial of DigitalOcean community:
-
-```html
-https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react
-```
-
-Django official documentation:
-
-```html
-https://docs.djangoproject.com/en/4.0/
-```
-
 ReactJS official documentation:
 
 ```html
@@ -144,8 +112,6 @@ https://icons8.com/cssload/en/horizontal-bars
 - Honestly, I managed to finish all the application requirements except one: Filtered by backend. I feel like I lacked time and knowledge about backend.
 
 - The application is responsive.
-
-- I had a problem this year-end holiday so I was 2 whole days late. I sincerely hope that there is still time to deliver the project and you can review it.
 
 [Go up](#reto-de-ripley)
 

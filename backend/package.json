@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "heroku-postbuild": "cd frontend && yarn install --only=dev --no-shrinkwrap && yarn build"
+    "heroku-postbuild": "cd frontend && yarn install --only=dev --no-shrinkwrap && yarn build",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
